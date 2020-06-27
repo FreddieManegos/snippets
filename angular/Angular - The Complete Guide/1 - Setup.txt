@@ -1,0 +1,8 @@
+Install the Angular CLI
+> npm install -g @angular/cli
+
+Initial Setup Application
+> ng new my-app
+> ng server --open 
+			* open the browser
+			
