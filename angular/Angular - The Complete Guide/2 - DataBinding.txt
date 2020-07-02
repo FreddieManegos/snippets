@@ -1,0 +1,12 @@
+string interpolation |  {{data}}
+property binding |  [property]="data"
+
+event binding |  (event) = "expression"
+
+two-way binding [(ngModel)]="data"
+
+Directives? -> instructions in the DOM
+selector? [appTurnGreen]
+structural - *ngIf
+
+style directive - ngStyle ngClass

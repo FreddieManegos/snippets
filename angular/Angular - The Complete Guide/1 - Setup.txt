@@ -6,3 +6,4 @@ Initial Setup Application
 > ng server --open 
 			* open the browser
 			
+config bootstrap
