@@ -1,0 +1,12 @@
+Interfaces, Enum, 
+
+interface Todo {
+	name: string;
+	completed?: boolean;
+}
+? -> compulsory
+
+var todo: Todo = {
+	name: 'Pick up drycleaning'
+};
+

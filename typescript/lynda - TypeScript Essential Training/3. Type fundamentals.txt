@@ -1,0 +1,39 @@
+-----------
+ECMAScript 5 Types
+boolean
+number
+string
+null/undefined
+object
+
+
+Javascript Arrays 
+
+Object Literals
+ var joke = { 
+	name: "Freddie",
+	species: "Dog",
+	age: 5,
+	speak: function () {}
+ }
+ 
+ 
+function totalLength(x: (string | any[]), y: (string | any[])): number {
+	var total: number = x.length + y.length;
+	
+	x.slice(0)
+	
+	if(x.instanceof Array) {
+		x.push('abc');
+	}
+	
+	if(x.instanceof String) {
+		x.substr(1);
+	}
+	
+	return total;
+}
+ 
+
+
+ 
