@@ -1,0 +1,82 @@
+1. Basic Styles Overview
+	Reboot 
+	Makes styles consistent across different browsers and platforms
+	Uses - rem
+	
+2. Basic Typography
+	* Typography
+		Reboot.css -> normalize styles
+		Rems vs Ems
+		Avoid margin-top
+		inherit when possible
+		border-box sizing
+		Native font stacks
+		Special styles
+		
+	* Text Utilities
+		Horizontal Alignment
+			text-justify
+			text(-XX)-POS
+				XX: sm > 576, md > 768, lg > 992, xl > 1200
+				POS: left center right
+		Line Height Alignment
+			align-SID
+				SID: baseline, top, middle, bottom, text-bottom, text-top, right
+		Capitalization
+			text-TYP
+				TYP: lowercase, uppercase, capitalize, monospace
+		Text Styles
+			font-STYL
+				STYL: italic, weight-normal, weight-light, weight-lighter, weight-bold, weight-bolder
+		Text Modifiers
+			text-decoration-none
+				a -> take off the underline on the bottom
+			text-reset
+		Flow
+			text-FLOW
+				FLOW: wrap, nowrap, break, truncate (ellipses)
+	* Lists & Blockquotes
+		Lists
+			list-unstyled: no bullets
+			inline lists
+				list-inline on UL
+				list-inline-item 
+		Blockquotes
+			Bigger and has this left border-box
+			blockquote-footer
+				- <>
+			blockquote-reverse - reverse the baseline
+	* Using Colors
+		Text-Colors
+			text-COLOR
+				COLOR: primary, secondary, success, danger, warning, info, light, dark, body, black-50, white-50, muted, white
+		Background Colors
+			bg-COLOR
+				COLOR: primary, secondary, success, danger, warning, info, light, dark, white, transparent
+		
+	* Working with Images
+		Basic Images
+			img-fluid - Responsive images
+			img-thumbnail - rounded 1px border
+		Rounded
+			ROUNDED(-SID) (-SHA) (-SIZ) -> individual
+			SID: top, right, bottom, left
+			SHA: circle, pill
+			SIZ: 0, sm, lg
+		Aligning Images
+			float-left or float-right
+			text-center: center inline
+			mx-auto: center block
+		Figures
+			figure on the <figure> tag
+			figure-img on the images
+			figure-caption on the text 
+	* CSS Variable 
+		New feature in CSS
+		Browser compatibility
+		var() and :root
+		doesn't change existing
+		
+		Color Variables
+		Media Queries
+		

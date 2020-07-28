@@ -1,0 +1,101 @@
+1. Layout Overview
+	container 
+	container-fluid
+	
+	12-Column Grid Breakpoints
+		extra small
+		small 
+		medium
+		large
+		extra large
+	
+2. Using Containers
+	Layout Grid Containers
+	The Grid	
+		Responsive 12-column
+		Flexbox Based 
+			container, row, column
+	Grid containers
+		container(-SIZ)
+		SIZ: sm, md, lg, xl, fluid
+		15px padding
+	
+3. Rows/Columns
+	row
+	row-cols(-BP) (-COL)
+		BP: sm, md, lg, xl
+		COL: 1-6
+	no-gutters delete space between
+	
+	columns
+		Up to 12 columns 
+		col(-BP)(-COL)
+		BP: sm, md, lg, xl
+		COL: (1-12)
+	Aligning Columns
+		Vertical
+			align-TYP-DIR
+				TYPE: items, self
+				DIR: start, center, end
+		Horizontal
+			justify-content-DIR
+				DIR: start, center, end, around, between 
+		vh-100
+	Multiple Classes
+		container(-SIZ)
+			SIZ: sm, md, lg, xl, fluid
+		row row-cols(-BP)(-COL) 
+	Offsetting Columns
+		offset-BP-COL
+			BP: sm, md, lg, xl
+			Col: 1-11
+	Customizing Order
+		order(-BP)-ORD
+		BP: sm,md,lg,xl
+		ORD: 1-12
+	Vertical Alignment: Use in rows
+		align-items-ALN
+			ALN: start, center, end
+	Individual Alignment: Use in cols 
+		align-self-ALN
+			ALN: start, center, end
+	Horizontal Alignment: Use in rows, need col width
+			justify-content-ALN
+			ALN: start, center, end, around, between
+
+4. Position  and Display
+	+ Position Classes
+		fixed-top, fixed-bottom, sticky-top
+	+ Basic Display : Mimic CSS
+		d(-BP)-TYP
+		BP: sm, md, lg, xl
+		TYP: none, inline, inline-block, block, table table-row, table-cell, flex, inline-flex
+	+ Print Display
+		d-print-TYP
+			TYP: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex
+	+ Basic flex container
+		d(-BP)(-inline)-flex
+			BP: sm, md, lg, xl 
+	+ Flex Container: Container/item classes
+		d(-BP)(-inline)-flex
+			BP: sm,md,lg,xl
+		+ Direction	
+			flex(-BP)(-DIR)(-reverse)
+				BP: sm,md,lg,xl
+				DIR: row, column
+		+ Order
+			order(-BP)-ORD
+				BP:	
+				ORD: 1-12
+		+ Justify
+			justify-content(-BP)-ALG	
+			BP: sm,md,lg,xl
+			ALG: start,end,center, around, between
+		+ Wrap
+			flex(-BP)-WRP(-reverse)
+			BP:
+			WRP: wrap, nowrap
+		+ Vertical Alignment
+			align-content(-BP)-ALG
+				ALG: start, end,center, between, around, stretch
+		
