@@ -5,7 +5,7 @@
 	
 2. Basic Typography
 	* Typography
-		Reboot.css -> normalize styles
+		Reboot.css -> normalizize styles
 		Rems vs Ems
 		Avoid margin-top
 		inherit when possible

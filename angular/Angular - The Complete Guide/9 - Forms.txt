@@ -1,0 +1,21 @@
+Angular and Forms 
+{
+	value: {
+		//key value pairs
+		name: 'Fred',
+		email: 'test@test.com'
+	}
+	valid: true
+}	
+	
+Two Approaches
+
+Template-Driven 
+	- Angular infers the Form Object from the DOM
+
+Reactive 
+	- Form is created programmatically and synchronized with the DOM
+	
+ngModelGroup 
+
+

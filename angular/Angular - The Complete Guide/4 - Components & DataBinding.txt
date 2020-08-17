@@ -1,3 +1,65 @@
 Property & Event Binding
 ------------------------
-Example Project
+
+Project Example
+
+	cockpit 
+		cockpit.component.css
+		cockpit.component.html
+		cockpit.component.ts
+	server-element
+		server-element.component.css
+		server-element.component.html
+		server-element.component.ts 
+	app.component.css
+	app.component.html
+	app.component.ts 
+	
+As what I understand 
+
+
+On server-element.component.ts | add @Input() to make it bindable outside
+	* Provides a template
+	export class ServerElementComponent implements OnInit {
+	  @Input() element: {type: string, name: string, content: string};
+	  constructor() { }
+
+	  ngOnInit(): void {
+	  }
+	}
+
+On cockpit.component.ts | add @Output listinable outside passing event oustide the component
+
+	export class CockpitComponent implements OnInit {
+	  @Output('sCreated') serverCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+	  @Output('bpCreated') blueprintCreated = new EventEmitter<{serverName: string, serverContent: string}>();
+
+	  newServerName = '';
+	  // newServerContent = '';
+	  @ViewChild('serverContentInput', {static: true}) serverContentInput: ElementRef;
+	  // thi
+
+	  constructor() { }
+
+	  ngOnInit(): void {
+	  }
+
+	  onAddServer(nameInput: HTMLInputElement) {  
+		// console.log(nameInput.value)
+		// console.log(this.serverContentInput);
+		this.serverCreated.emit({
+		  serverName: nameInput.value,
+		  serverContent: this.serverContentInput.nativeElement.value
+		});
+	  }
+
+	  onAddBlueprint(nameInput: HTMLInputElement) {
+		this.blueprintCreated.emit({
+		  serverName: nameInput.value,
+		  serverContent: this.serverContentInput.nativeElement.value
+		});
+	  }
+	}
+
+	
+	

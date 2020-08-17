@@ -98,4 +98,43 @@
 		+ Vertical Alignment
 			align-content(-BP)-ALG
 				ALG: start, end,center, between, around, stretch
-		
+	+ Individual Flex Elements 
+		Align Self 
+			align-self(-BP)-ALG	
+				BP: sm, md, lg, xl
+				ALG: start, end, baseline, stretch 
+		Controlling Order
+			order(-BP)-ORD 
+				ORD: 1-12
+	+ Floating Elements 
+		float-(BP)-SID
+			BP: sm,md,lg,xl
+			SID: left, right, none
+	+ Margin/Padding
+		pb(-BP)-(N)SIZ
+		PRO: m - margin; p - padding 
+		SID: t r b l x y
+		BP: sm, md, lg, xl 
+		SIZ: 0 1 2 3 4 5 auto 
+		1 - 0.25rem
+		n - negative : works on margin 
+		x - left and right
+		y - top and bottom 
+		auto - push item in each side
+	+ Visibility
+		invisible, visible
+		d(-BP)-TYP
+			BP: sm, md, lg, xl
+			TYP: none, inline, inline-block, block, table, table-cell, flex, inline-flex 
+	+ SIZ(-AMT)
+		SIZ: w,h,mw,mh,vw,vg,min-vw,min-vh
+		AMT: 25,50,75,100,auto
+	+ Borders
+		BORDER(-SID)(-COL)(-0)
+			SID: top, right, bottom, left 
+			COL: primary, secondary, success, danger, warning, info, light, dark, white
+	+ ROUNDED	
+		ROUNDED(-SID)(-SHA)(-SIZ)
+			SID: top, right, bottom, left
+			SHA: circle, pill 
+			SIZ: 0, sm, lg 

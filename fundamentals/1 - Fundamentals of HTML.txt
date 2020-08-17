@@ -1,0 +1,154 @@
+Chapter 1: Structure
+	HTML - describe the structure of pages
+	HTML uses elements to describe the structure of pages
+
+	Tags - act like containers
+	Attributes - provide additional information
+
+	<body> - shown in main browser
+	<head> - contains information about the page
+	<title> - top of the browser
+
+Chapter 2: Text
+	add tags (known as markup)
+	structural markup - element headings and paragraphs
+	semantic markup - provide information, quatation, emphasis, strong
+
+	levels of headings
+		h1, h2, h3, h4, h5
+	paragraph
+		p
+	bold & italic
+		b, i 
+	superscript & subscript
+		sup, sub 
+	white space 
+	
+	line breaks	& horizonal rules
+		<br/>
+		<hr/>
+	
+	strong & emphasis
+		<strong>
+		<em> 
+	quatations
+		<blockquote>
+		<q> " " 
+	abberviations & acronyms	
+		<abbr>
+		<acronym>
+	citations & definitions	
+		<cite>
+		<dfn>
+	author details
+		<address>
+	changes to content
+		<ins> - inserted
+		<del>  - deleted	
+		<s> - strikethrough
+Chapter 3
+	lists	- 
+		ol	- ordered list 
+		li 	- list
+		ul
+		li 
+	definition lists
+		<dl> - definition list
+			<dt> - term to be defined
+			<dd> - contains definition 
+	nested lists
+		ul
+		 li
+		 li
+		  ul 
+		   li
+		  ul 
+		ul
+Chapter 4
+	links 
+		<a href="#"> </a>
+	email links
+		<a href="mailto:jone@example.org"></a>
+	opening links in new window	
+		<a href="#" target="_blank"> </a>
+	linking to a specific part of the same page
+		<h1 id="top">Film-Making Terms</h1>
+		<a href="#arc_shot">Arc Shot</a><br />
+		<h2 id="arc_shot">Arc Shot</h2>
+		<p>A shot in which the subject is photographed by an
+		encircling or moving camera</p>
+		
+Chapter 5	
+	Images
+	<img src="" alt="test sample" title="test"> 
+	IMage Format	
+		Jpeg - Whenever you have many different colors in a picture you should use a JPEG
+		Gif - Use GIF or PNG format when saving images with few colors or large areas of the same color.
+		
+Chapter 6
+	Tables	- A table represents information in a grid format.
+	<table>	
+	<tr> - table row 
+	<td> - table data 
+	<th> - table heading
+	Long tables	
+	<thead> - headings of the tabl
+	<tbody>
+	<tfoot> 
+
+Chapter 7 - Forms 
+	<form> 
+		action - URL
+		method - get or post 
+	<input> 
+		type: text
+			name, maxlength, size 
+		type: password
+		type: radio 
+			name, value, checked 
+		type: file 
+		type: submit 
+		type: image 
+		type: input
+		type: date 
+		type: email 
+		type: url 
+		type: search 
+	<textarea>
+	<select> - drop down list 
+		name 
+		<option> 
+			value, selected 
+		multiple - Multiple Select Box 
+	File Input Box
+	<input id="sample" type="--" name="gender">
+	<label for="id">  
+	Grouping Form Elements 
+	<fieldset> - sample code:
+		<fieldset>
+			<legend>Contact details</legend>
+			<label>Email:<br />
+			<input type="text" name="email" /></label><br />
+			<label>Mobile:<br />
+			<input type="text" name="mobile" /></label><br />
+			<label>Telephone:<br />
+			<input type="text" name="telephone" /></label>
+		</fieldset>
+Chapter 8 - Extra Markup
+	iframes 
+		<iframe> - little windows - inline frame 
+			uses:
+				embed Google Map 
+	<meta> - information about your pages
+		The <meta> element lives inside the <head> element and contains information about that web page.
+	some of defined values for this attributes
+		name attributes
+		* description: This description is commonly used by search engines to understand what the page is about and should be a maximum of 155 characters
+		* keywords:This description is commonly used by search engines to understand what the page is about and should be a maximum of 155 characters
+		* robots: This indicates whether search engines should add this page to their search results or not
+		
+		 http-equiv attributes
+		* author: This defines the author of the web page.
+		* pragma: This prevents the browser from caching the page. (That is, storing it locally to save time downloading it on subsequent visits.)
+Chapter 9 - Flash, Video, & Audio
+	

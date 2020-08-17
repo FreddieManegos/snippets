@@ -1,0 +1,78 @@
+1. Routing 
+
+Sample Routing in Angular
+
+const appRoutes: Routes = [
+	{ path: '', component: HomeComponent},
+	{ path: 'users', component: UserComponent},
+	{ path: 'users/:id/:name', component: UserComponent},
+	{ path: 'servers', component: ServersComponent },
+	{ path: 'servers', component: ServerComponent },
+	{ path: 'servers/:id/edit', component: EditServerComponent }
+];
+
+2. Setting UP Routes
+<router-outlet></router-outlet>
+
+
+3. Adding Navigation to the App
+
+routerLink="/"
+routerLink="/servers"
+routerLink="/users"
+
+
+4. Marking Active Routes 
+routerLink="server"  -> Will load the url/something/server 
+routerLink="/server" -> Will load the url/server
+routerLink="../server" -> 
+routerLink=".servers"
+
+5. Styling Active Routes 
+routerLinkActive="active"
+[routerLinkActiveOptions]="{exact: true}"
+
+
+6. Navigating Programmatically
+
+constructor(private router: Router) {}
+
+onLoadServers(){ 
+	this.router.navigate(['/servers']);
+}
+
+<button class="btn btn-primary" (click)="onLoadServers()">Load Servers</button>
+
+7. Using Relative Paths in Programmatic Navigation
+constructor(private router: Router, private route: ActivatedRoute) {}
+
+onLoadServers(){ 
+	this.router.navigate(['/servers'], { relativeTo: this.route });
+}
+
+
+8. Passing QUery Parameters and Fragments
+	
+	[routerLink]="['/servers', 5, 'edit']"
+	[queryParams]="{allowEdit: '1'}"
+	[fragment]="loading"
+		Resulting QUery
+	localhost:4200/servers/5/edit?allowEdit=1#loading
+		
+	onLoadServer(id: number) {
+		this.route.navigate(['/servers',id,'edit'], {queryParams: {allowEdit: '1'}, fragment: 'loading'});
+	}
+
+9. Retrieving Query Paramters and Fragments
+	this.route.snapshot.queryParams
+	this.route.snapshot.fragment
+	
+	this.route.queryParams.subscribe()
+	this.route.fragment.subscribe()
+	
+10. Practicing and some Common Gotchas
+	Params
+	this.route.params
+		.subcribe(
+		);
+	

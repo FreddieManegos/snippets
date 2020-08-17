@@ -1,0 +1,14 @@
+What are Pipes? 
+	Transforms the value 
+	
+Using Pipes 
+	DatePipe : date:"MM/dd/yy" | date:'fullDate'
+	UpperCasePipe : 
+	LowerCasePipe
+	CurrencyPipe
+	DecimalPipe
+	PercentPipe
+	
+We can use Pipe as a filter
+
+Async filter will 

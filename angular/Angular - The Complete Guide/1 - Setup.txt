@@ -5,5 +5,99 @@ Initial Setup Application
 > ng new my-app
 > ng server --open 
 			* open the browser
-			
+		
 config bootstrap
+download bootstrap in angular
+
+ng 
+
+
+validate 
+
+
+
+Basic of Angular 
+	Modules
+	Components
+	Templates, Directives and Data Binding
+	Services and Dependency Injection
+	Routing
+
+
+Intro to Module 
+	Angular apps are modular -> NgModules (containers for codes)
+	defined by @NgModule() decorator 
+		declarations-> components, directives, and pipes
+		exports-> subset of declarations 
+		imports-> other modules
+		provides-> creators of servicess
+		bootstrap-> main application view, hosts all views 
+	NgModule provide compilation contect for their components
+
+Intro to Components & Templates 
+	A component -> patch of screen called a view 
+	@Component decorator -> identifies the class immediately 
+		selector-> CSS 
+		templateURL -> html template 
+		providers-> array of services that the component requires
+	Templates and Views
+	
+	Data Binding	
+		Two-way data binding
+		String interpolation -> 
+		Property Binding ->
+		Event Binding -> 
+	
+	Pipes - declara display-value transformations 
+		@Pipe decorator 
+		To specify a value transformation in an HTML template, use the pipe operator (|).
+		{{interpolated_value | pipe_name}}
+	
+	Directives  -> Templates are dynamics
+		@Directive decorator
+			two kinds of directive 
+				structural -> alter layout by adding,removing, and replacing elements in the DOM
+				attribute -> alter apperance or behavior of an existing elements
+				ngModel -> 
+				
+Intro to services and dependency injection
+	Service might depend on the HttpClient service 
+	DI - inject a service into a component, giving the component access to that service class 
+		@Injectable() decorator -> provide the metadata inject it into a component
+
+
+Angular File Storage 
+	Building block
+		Modules
+		Services
+		Components 
+		Pipes 
+		SCSS
+		
+	Authentication
+		Login
+		Registration
+		Reset-Password
+		Forgot-Password
+		Main Confirmation
+	Core 
+		Services
+		Guards
+		Reusable Components
+		Common Pages
+		Common Modules 
+	Main Dashboard
+		Application Pages 
+		Navigation
+		User Interface
+		Templates 
+	
+	Why should we worry about Code Structure
+		Easy Debugging
+		Clean Code
+		Perforamance
+		Scalability
+	
+	
+	
+	

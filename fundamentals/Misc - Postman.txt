@@ -1,0 +1,89 @@
+What You SHould Know
+ + How to run simple command-line requests
+ + General Knowledge
+ + HTTP Requests
+ + APIs
+ + Node Js
+ + Continuous Integration
+ 
+ Collections - saved requests 
+ 
+ *Contact List APIs
+	https://documenter.getpostman.com/view/SWLceUSf?version=latest
+	Implement the following APIs
+		Get Contact List
+		Add Contact 
+		Get Contact 
+		Update Contact 
+		Delete Contact 
+
+ Negative Scenarios 
+	Record not found 
+	Request is sent with missing required information
+	Value has too many characters
+	Value has invalid characters 
+	Value is not in the correct format
+	
+ Status Code
+ 	100 Continue. The client SHOULD continue with its request. ...
+	200 OK. The request has succeeded. ...
+	203 Non-Authoritative Information. ...
+	206 Partial Content. ...
+	300 Multiple Choices. ...
+	303 See Other. ...
+	306 (Unused) ...
+	400 Bad Request.
+
+
+ SpringBoilerplate
+	
+	Permissions			  ROLE_AUTHENTICATED   ROLE_MAIN     ROLE_ADMIN
+		ROLE_WRITE												x
+		ROLE_READ												x		
+		PERMISSION_WRITE										x		
+		PERMISSION_READ											x
+		USER_WRITE								x				x	
+		USER_READ				x				x				x
+		
+	Roles	
+		ROLE_ADMIN
+		ROLE_MAIN
+		ROLE_AUTHENTICATED 
+	
+	Strat
+		Users: 
+			id: number 
+			name: string
+			username: string
+			status: number 
+			verrified: number 
+			vkey: 
+			created:number
+			changed:
+			access:
+			login:
+			mid:
+			manageUsers: User[]
+			user_roles: Roles[]
+			user_meta:
+		Role
+			rid: number
+			name: string
+			weight: number
+			users_roles: user
+				users_rolesid {}
+			role_permissions: 
+				role_permissionsid {}
+		Permission 
+			pid: number
+			name: string 
+			role_permissions:
+				role_permissionid: {}
+		
+		Role_Permission
+			pid: number
+			rid: number
+				
+		
+			
+	

@@ -1,0 +1,49 @@
+What is an Observable?
+	Observable - Various Data Sources
+		(User Input) Events, Http Requests, Triggered in Code
+	--------------------
+		Handle Data, Handle Error, Handle Completion -> Write the code which gets executed
+	Observer 
+	
+	--------------------
+	Anylyzing Angular Observable
+		
+		this.route.params.subscribe( (params: Params0 => {
+			this.id =+ params.id;
+		});
+	
+	Package rxjs 
+	
+	import { interval, Subcription } from 'rxjs';
+	
+	export class HomeComponent implements OnInit, OnDestroy {
+	
+	private firstObsSubscription: Subcription;
+	
+	ngOnInit(){
+		this.firstObsSubscription = interval(1000).subscribe(
+			count => {
+				console.log(count);
+			}
+		);
+	}
+	
+	ngOnDestroy(): void {
+		this.firstObsSubscription.unsubscribe();
+	}
+	}
+	
+Operators 
+	
+	Observable & Observer 
+	
+	
+Learn RXJS
+	academind.com/learn/javascript/understanding-rxjs/
+	learnrxjs.io
+	
+Subjects
+	
+	
+	
+	

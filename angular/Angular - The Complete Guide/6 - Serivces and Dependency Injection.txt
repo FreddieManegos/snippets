@@ -1,0 +1,18 @@
+What are Services? 
+
+	Application
+		AppComponent - log Services
+			AboutComponent - Log data to console
+			UserComponent - Store user data - UserService
+				UserDetailComponent - Log data to console 
+		
+		
+	create a Service
+	
+
+Hierarchical Injector 
+
+	* AppModule - Same instance of service is available Application-wide
+	* AppComponent - same instance of service is available for all Components (but not for other Services) 
+	* Any other Component - Same instance of Service is available for the Component and all its child components. 
+	

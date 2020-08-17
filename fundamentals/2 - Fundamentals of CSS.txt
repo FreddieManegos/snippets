@@ -1,0 +1,184 @@
+
+Chapter 11 - Color
+	Foreground Color: color 
+		RGB Values: rgb()
+		Hex Codes: #00000
+		Color Names:
+	Background Color 
+	
+	HUE
+	SATURATION - amount of gray in a color 
+	BRIGHTNESS - how much black is in a color 
+	
+	Contrast 
+		Low Contrast - harder to read 
+		High COntrast - easier to read. Too much contrast can make it hard to read, too.
+		Medium Contrast - Longs spans of text
+	Opacity
+		opacity, rgba 
+	
+	HSL Colors: 
+		Hue: Colloquial idea of color (expressed as an angle)
+		Saturation: Amount of gray in color (expressed as a percentage)
+		Lightness: Amount of white or black in a color (0% white, 50% normal, 100% black) 
+		
+Chapter 12 - Text
+	Typeface Terminology
+		SERIF - extra details on the ends of the main strokes of the letters 
+		SANS-SERIF - have straight ends to letters, cleaner design | Screens have a lower resolution than print. 
+		MONOSPACE - Monospace fonts are commonly used for code because they align nicely, making the text easier to follow. 
+	
+		Weight: Light, medium, bold, black 
+		Style: Normal, Italic, Oblique
+		Stretch: Condensed, Regular, Extended
+		
+		SERIF: Serif fonts have extra details on the end of the main strokes of the letters. (Georgia, Times, Times New Roman)
+		SANS-SERIF: Sans-serif fonts have straight ends to letters and therefore have a much cleaner design. (Arial, Verdana, Helvetica)
+		MONOSPACE: Every letter in a monospace typeface is the same width. (Courier, Courier New) 
+		CURSIVE: 
+		FANTASY: 
+		
+		NOTE:	For example, if you wanted serif type, you could write the following:
+			font-family: Georgia, Times, serif
+			
+		Size Type
+			font-size 
+				pixels 
+				percentage 
+				ems 
+				PIXELS
+				h1	24px		
+				h2	18px
+				h3	14px
+				body12px 
+		@font-face allows you to use a font, even if it is not installed on the computer of the person browsing
+		
+		font-family (font-family: ChunkFiveRegular, Georgia, serif;)
+			src 
+			format
+		BOLD: font-weight
+			normal
+			bold 
+		ITALIC: font-style
+			normal
+			italic 
+			oblique
+		UPPERCASE & LOWERCASE: text-transform
+			uppercase
+			lowercase
+			capitalize 
+		UNDERLINE & STRIKE: text-decoration
+			none
+			underline
+			overline 
+			line-through
+			blink 
+		LEADING: line-height
+		LETTER & WORD SPACING 
+			letter-spacing, word-spacing 
+		ALIGNMENT
+			text-align
+				left
+				right
+				center 
+				justify
+		VERTICAL ALIGNMENT 
+			vertical-align
+				baseline
+				sub
+				super 
+				top 
+				text-top
+				middle
+				bottom
+				text-bottom 
+		Text Indent 
+			text-indent 
+		Text Shadow 
+			text-shadow 
+		First Letter or Line
+			:first-letter, :first-line 
+		Styling links
+			:link - This allows you to set styles for links that have not yet been visited
+			:visited - This allows you to set styles for links that have been clicked on. 
+		Responding to users
+			:hover - This is applied when a user hovers over an element with a pointing device such as a mouse.
+			:active - This is applied when an element is being activated by a user for example, when a button is being pressed or a link being clicked.
+			:focus This is applied when an element has focus. 
+			
+Chapter 13 - Boxes 
+	Box Dimensions
+		width, height 
+	Limiting Width
+		min-width, max-width
+	Limiting Height
+		min-height, max-height
+	Overflowing Content
+		overflow: 
+			hidden, scroll
+	Border, Margin, & Padding
+		Border- Every box has a border (even if it is not visible or is specified to be 0 pixels wide)
+		Margin- Margins sit outside the edge of the border. 
+		Padding- Padding is the space between the border of a box and any content contained within it
+	White Space & Vertical Margin 
+	Border Width - The border-width property is used to control the width of a border
+		border-width:
+			thin, medium, thick 
+	Border Style	
+		border-style:
+			solid, dotted, dashed, double, groove, ridge, inset, outset, hidden/none
+		border-top-style
+		border-left-style
+		border-right-style
+		border-bottom-style
+	Border Color 
+		border-color:
+		border-top-style
+		border-left-style
+		border-right-style
+		border-bottom-style
+	Shorthand - specify the width, style and color 
+		border: 3px dotted #0000
+	Padding
+		padding:
+		padding-top
+		padding-right
+		padding-bottom
+		padding-left
+	Margin
+		margin 
+		margin-top
+		margin-right
+		margin-bottom
+		margin-left
+	Change inline/block
+		display:
+			* inline - This causes a block-level element to act like an inline element
+			* block - This causes an inline element to act like a block-level element
+			* inline-block - This causes a block-level element to flow like an inline element
+			* none - hides an element from the page,
+	Hiding Boxes	
+		visibility:
+			hidden - hides the element
+			visible - shows the element 
+	CSS3: Border Images
+		border-image:
+
+Chapter 14: Lists, Tables, and Forms 
+	Bullet Point Styles
+		list-style-type
+			ul -> none, disc, circle, square 
+			ol -> decimal, decimal-leading-zero, lower-alpha, upper-alpha, lower-roman, upper-roman 
+	Images for Bullets
+		list-style-image
+	Postioning the Marker
+		list-style-position
+	Table Properties
+		width
+		padding
+		text-transform
+		letter-spacing, font-size
+		border-top, border-bottom
+		text-align 
+		background-color
+		:hover 

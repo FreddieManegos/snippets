@@ -1,0 +1,15 @@
+Http Requests
+Http & Backend Interaction
+	
+How do I connect Angular to a Database?
+	Angular ->  X store & Fetch Data X -> SQL/NoSQL
+
+Anatomy of a Http Request	
+
+	Http Verb 		   -> POST, GET, PUT, DELETE, PATCH
+	URL (API Endpoint) -> /posts/1
+	Headers (Metadata) -> { "Content-Type":"application/json"}
+	Body(Post,Put,Patch-> { title: "New Post"}
+	
+
+	

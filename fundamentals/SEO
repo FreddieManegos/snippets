@@ -1,0 +1,36 @@
+SEO: 
+	Heading Tag = Title Tag 
+		pageurl must match h1 tag 
+			/physical-fitness-360
+			/math-101 
+		
+	
+	https://clutch.co/seo-firms/resources/meta-tags-that-improve-seo
+	
+	<link rel="canonical" href="http://example.com/" />
+	A canonical tag (aka "rel canonical") is a way of telling search engines that a specific URL represents the master copy of a page. 
+	
+	<meta charset="utf-8">
+	
+	<meta name="audience" content="Military" />
+	<meta name="department" content="DOD" />
+	
+	<meta name="keywords" content="The “accordion family”: How to deal with frequent separations" />
+	
+	<meta name="MobileOptimized" content="width" />
+	<meta name="HandheldFriendly" content="true" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	
+	<link rel="shortcut icon" href="/themes/custom/hprc/favicons.ico" type="image/vnd.microsoft.icon" />
+	
+	https://www.linkedin.com/post-inspector/inspect/
+	
+	/sitemap_index.xml
+		
+	meta 
+		attribute name
+			Keywords
+			Description
+			Viewport
+			
+	

@@ -1,0 +1,52 @@
+1. Directive
+	Two Types
+		Attribute Directive
+			Look like a normal HTML Attribute (possibly with databinding or event binding)
+			Only affect/change the element they are added to 
+		Structural Directives
+			Look like a normal HTML Attribute but have a leading * (for desugaring)
+			Affect a whole area in the DOM (elements get added/removed)
+
+2.	*ngFor - 
+	*ngIf - 
+
+3.	[ngClass]
+	[ngStyle]  
+
+4. Creating a Basic Attribute Directive
+
+	import { Directive } from '@angular/core'
+
+	@Directive({
+		selector: '[appBasicHightlight]'
+	})
+
+	export classs BasicHighlightDirective {
+		constructor(private elementRef: ElementRef) {
+			
+		}
+		
+		ngOnInit(){
+			this.elementRef.nativeElement.style.backgroundColor = 'green';
+		}
+	}
+
+5.  ng g directive better-highlight
+
+	import { Directive, OnInit, Renderer2 } from '@angular/core'
+
+	@Directive({
+		selector: '[appBasicHightlight]'
+	})
+
+	export classs BasicHighlightDirective {
+		constructor(private renderer: Renderer2) {
+			
+		}
+		
+		ngOnInit(){
+			this.renderer.setStyle();
+		}
+	
+9 Binding to Directive Properties 
+	

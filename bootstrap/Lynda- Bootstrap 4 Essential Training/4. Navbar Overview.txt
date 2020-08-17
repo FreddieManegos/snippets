@@ -1,0 +1,29 @@
+Navigation Components
+	+ Navs 
+	+ Tabs
+	+ Pills
+	+ Navbars 
+
+	+ Branding
+	+ Color Schemes
+	+ Dropdown
+	+ Form elements
+1. Create basic Navigation
+	Basic Nav Classes
+		with/without ULs
+		nav
+		nav-item 
+		nav-link
+	Nav Link Options 
+		active - show active 
+		disabled - prevent clickable
+	Nav Styles
+		nav-pills
+		nav-tabs
+	Nav Alignment
+		justify-content-center
+		justify-content-end
+		nav-fill
+		nav-justified
+		flex-column 
+	
