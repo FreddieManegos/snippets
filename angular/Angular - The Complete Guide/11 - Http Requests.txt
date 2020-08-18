@@ -10,6 +10,7 @@ Anatomy of a Http Request
 	URL (API Endpoint) -> /posts/1
 	Headers (Metadata) -> { "Content-Type":"application/json"}
 	Body(Post,Put,Patch-> { title: "New Post"}
-	
 
-	
+Angular HTTP Interceptor
+
+Firebase Backend	
