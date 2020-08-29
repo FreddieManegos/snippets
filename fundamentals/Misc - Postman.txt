@@ -6,6 +6,8 @@ What You SHould Know
  + Node Js
  + Continuous Integration
  
+ npm install bootstrap --save
+ 
  Collections - saved requests 
  
  *Contact List APIs
@@ -74,6 +76,7 @@ What You SHould Know
 				users_rolesid {}
 			role_permissions: 
 				role_permissionsid {}
+				
 		Permission 
 			pid: number
 			name: string 
@@ -83,7 +86,9 @@ What You SHould Know
 		Role_Permission
 			pid: number
 			rid: number
-				
+	
+	Login 
+		
 		
 			
 	

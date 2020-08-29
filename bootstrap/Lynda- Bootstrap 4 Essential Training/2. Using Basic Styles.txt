@@ -11,7 +11,7 @@
 		inherit when possible
 		border-box sizing
 		Native font stacks
-		Special styles
+		Special 
 		
 	* Text Utilities
 		Horizontal Alignment

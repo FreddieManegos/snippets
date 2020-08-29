@@ -98,6 +98,8 @@ Angular File Storage
 		Perforamance
 		Scalability
 	
+Angularboilerplate 
+	Admin
 	
 	
 	

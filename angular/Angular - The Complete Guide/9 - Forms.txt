@@ -17,5 +17,15 @@ Reactive
 	- Form is created programmatically and synchronized with the DOM
 	
 ngModelGroup 
-
-
+	Group the forms
+	
+Patch Value 
+	this.signupForm.form.patchValue({
+		'user-data': {
+			username: suggestedName
+		}
+	}) // change the specific field of data here
+	
+	
+Reactive Forms
+	- Form is created programmatically and synchronized with the DOM
