@@ -1,0 +1,13 @@
+What is distribution
+Point estimates
+Confidence intervals
+
+What is distribution?
+	Defn.
+		A distribution is a function that shows the possible values for a variable and how often they occur.
+	e.g.
+		Rolling a die
+		Probability of getting 1 = 1/6 ~ 0.17
+		Rolling a die is an example of a |Discrete Uniform Distribution|, means that all outcomes has an equal chance of occuring
+	Probability Distribution (Normal, Binomial, Uniform)
+	

@@ -14,3 +14,6 @@ Anatomy of a Http Request
 Angular HTTP Interceptor
 
 Firebase Backend	
+
+Auto Login
+	Local Storage -> 

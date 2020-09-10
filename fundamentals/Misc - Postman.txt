@@ -87,8 +87,82 @@ What You SHould Know
 			pid: number
 			rid: number
 	
-	Login 
+	(alias) new User(uid: number, name: string, username: string, status: number, verrified: number, vkey: string, created: number, changed: number, access: number, login: number, mid: string[], manageUsers: string[], user_roles: string[], user_meta: string[]): User
+import User
 		
-		
-			
 	
+	{
+  "headers": {},
+  "body": {
+    "user": [
+      {
+        "uid": 201,
+        "name": "Jeff Zeejay Belamide",
+        "username": "zeejaybelamide@gmail.com",
+        "status": 0,
+        "verrified": 1,
+        "vkey": null,
+        "created": 1598001983,
+        "changed": 1598001983,
+        "access": 1598001983,
+        "login": 1598001983,
+        "mid": null,
+        "manageUsers": [],
+        "users_roles": [],
+        "users_meta": []
+      }
+    ]
+  }
+}
+
+{
+	"username": "freddiemar@gmail.com",
+	"password": "T0psecret!"
+}
+
+uid
+{uid: 203, name: "Freddie Mar Manegos", username: "freddiemar.manegos@g.msuiit.edu.ph", status: 0, verrified: 1, …}
+access: 1598010423
+changed: 1598010423
+created: 1598010423
+login: 1598010423
+manageUsers: []
+mid: null
+name: "Freddie Mar Manegos"
+status: 0
+uid: 203
+username: "freddiemar.manegos@g.msuiit.edu.ph"
+users_meta: []
+users_roles: []
+verrified: 1
+vkey: null
+__proto__: Object
+
+
+To do Tommorow: 
+	Change workflow of Code
+	When Register -> Add a Params register=1
+		Then Register
+	User Verify after getting the code
+
+Add QueryParams
+http://localhost:8080/v1/register?register=1 
+register 
+		
+User Verify
+http://localhost:8080/v1/verify/vkey/{vkey-id}
+
+users
+uid
+102
+203
+103
+206 x
+205 x
+204 x
+201 -
+
+Functionality
+Users CRUD
+
+

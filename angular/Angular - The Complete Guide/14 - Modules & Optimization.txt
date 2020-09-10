@@ -1,0 +1,10 @@
+Modules & Optimization
+---
+What are Modules?
+
+Modules -> Bundling blocks together in Angular (Component, Directive, Pipes, etc)
+		Angular analyzes NgModules to "understand" your application and its features
+		Angular modules define all building blocks your app uses: Component, Directives, Services
+		App requires at least one module
+		Core Angular features are included in Angular modules
+		You can't use a feature/building block without including it in a module 

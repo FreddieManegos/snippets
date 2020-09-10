@@ -1,0 +1,35 @@
+The Basic of Probability
+----------
+Chance of Success and Fail
+What is probability?
+	Chance of things to happen
+	The likelihood of an event occuring
+	e.g.
+		Flipping of a coin
+			Two possible events
+Def.
+	A -> Event
+	P(A) -> Probability
+	---
+	P(A) = preferred(favourable) / all(sample space)
+
+	e.g
+	A -> Head (Coin) only preferred outcome
+	P(A) = 1 / 2 = 0.5
+
+	A -> 4 (Dice) preferred outcomes -> 1
+				  total possible outcomes -> 6
+	P(A) = 1 / 6 ~ -.0167
+
+	Independent Event to occur at the same time
+	P(A and B) = P(A) * P(B)
+	e.g
+	P(Ace and Spade) = P(Ace) * P(Spade)
+					 = 4/ 52  * 1/4 = 4/208 ~ 0.019231
+	
+	Winning the lottery
+	A -> Lotto -> preferred outcomes -> amount of tickets
+			   -> total possible outcomes -> 175 million
+		
+		P(A) = 1 / 175 m = 0.0000000005
+		

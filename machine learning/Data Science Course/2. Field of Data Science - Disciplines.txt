@@ -1,0 +1,62 @@
+PART 1
+------------------------------------------
+Data Team: -> 
+Business Intelligence ->
+Data Science -> 
+----------------------------------
+Analysis vs Analytics
+
+Analysis - analysis of the past of the data. Explains How? and Why?
+	Qualitative Analysis - How? & Why? (SWOT)
+	Quantitative -> Data + How sales decreased last summer
+
+
+Analytics - explore potential future events. 
+	Two types: 
+		Qualitative - Intuition + Analysis
+		Quantitative - Formulas + Algorithms
+
+So, then
+	Business Analysis != Business Analytics
+
+What is a Business Intelligence (BI)
+	the process of analysing and reporting historical business d ata.
+	aims to explain past events using business data
+	preliminary step of predictive analytics
+		1. Analyse past data and extract useful insights
+		2. Create appropriate models 
+
+	PREMILINARY DATA REPORT - First Step of any data analysis
+	REPORTING WITH VISUALs & CREATING DASHBOARDS - 
+	
+Machine Learning: The Ability of machines to predict outcomes without being explicitly programmed
+	- Creating and Implementing algorithms that let machines receive data and use this data to: 
+		+ Make Predictions
+		+ Analyse Patterns 
+		+ Give Recommendations 
+
+Artificial Intelligence - simulating human knowledge and decision making with computers
+
+-----
+PART 2:
+DATA - 
+	Traditional Data - data from db
+	Big Data - extremely large number of data
+		Three formats - structured, semi-structured, unstructured
+		3Vs, 5Vs, 7Vs, 11Vs
+			vissions
+			value
+			visualisation
+			variability
+		Volume: Distributed between many computers
+		Variety: Images, Audio, etc
+		Velocity: Extract patterns must be fast
+				Retrieved in real-time
+----
+PART 3
+	The reason behind these Disciplines
+	
+	Storytelling is a crucial skill
+		Data Scientist should have the ability to express complex mathematical and programming concepts to end users. 
+	EXcell, STATA, SPSS
+	

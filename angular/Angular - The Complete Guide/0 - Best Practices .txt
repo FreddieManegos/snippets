@@ -1,0 +1,35 @@
+Angular Coding Style Guide
+---
+* File Structure Conventions
+	e.g. hero.component.ts, hero.component.html
+
+* Single Responsibility
+	Apply SRP to all components, services, and other symbols
+	
+	+ Rule of One
+		Do. Define one thing, such as a service or component
+		Consider. Limit to 400 lines of code
+	+ Small Functions
+		Do. define small functions
+		Consider. Limit to 75 lines of code
+
+* Naming 
+	+ General Naming Guidelines
+		Do. Use consistent names for all symbols
+			Recommended pattern is feature.type.ts 
+	+ Separate file names with dots and dashes
+		Do. Use dashes to separate words in the descriptive name.
+			Use dots separate descriptive name from the type
+			Use conventional type names including .service, .component, .pipe, .module, and .directive.
+	+ Symbol and File Names
+		Do. Consisted names for all assets named after
+			Use upper camel case for all class names
+	+ Service Names
+		Do. Consistent names for all services named after their feature
+			Suffix a service class name with Service
+	+ Bootstraping
+		Do. Put bootstraping and platform logic for the app ina file named main.ts
+	+ Component Selectors
+		Do. Use dashed-case or kebab-case for naming the element selectors of components.
+	+ Component Custom Prefix 
+		

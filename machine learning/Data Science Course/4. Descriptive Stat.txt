@@ -1,0 +1,28 @@
+Types of Data
+
+	Categorical 				Numerical
+e.g. Brands				Discrete		Continuous
+					e.g.
+						# of Child		Weight, Height, Time, Area, Distance
+						
+Level of Measurements
+		Qualitative 									Quantitative
+Nominal				Ordinal						Ratio				Interval
+brands cannot		groups & categories			Has a true 0		Doesnt have a true 0
+be ordered			that is ordered  			e.g.				e.g.
+e.g.				e.g.						# of objects		Temperature
+4 Seasons			Disgusting, Neutral,		Distance			
+					Delicious					Time	
+					
+Visualizing data
+
+Representation of Categorical Variables - Visualization 
+* Frequency distribution tables
+* Histogram
+* Bar Charts 
+* Pie Charts (Relative Frequency)
+* Pareto Diagram (Descending order of frequncy) Freq, Relative Freq, Cumulative Freq
+	Pareto Principle - 80-20 rule
+	** Frequency is the number of occurences of each item 
+
+Numerical Variables - Frequency Distribution'

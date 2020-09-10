@@ -1,5 +1,12 @@
+Property & Event Binding
 
+HTML Elements : Native Properties & Events
 
+Directives: Custom Properties & Events 
+
+Components: Custom Properties & Events 
+
+Binding Custom Properties	
 
 string interpolation |  {{data}}
 property binding |  [property]="data"

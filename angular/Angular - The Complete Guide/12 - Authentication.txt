@@ -1,0 +1,22 @@
+How Authentication Works?
+
+	Client - Browser -> Stores Token -> Stored Token is sent to authorize subsequent request 
+		Send Auth Data to Server 
+	
+	Server
+		<Session> Token to Client
+		
+	RESTful API is stateless
+	
+	 from Firebase
+	 
+	 {
+  "rules": {
+    ".read": "now < 1600185600000",  // 2020-9-16
+    ".write": "now < 1600185600000",  // 2020-9-16
+  }
+}
+
+Firebase Auth REST API
+
+https://firebase.google.com/docs/reference/rest/auth#section-create-email-password 
