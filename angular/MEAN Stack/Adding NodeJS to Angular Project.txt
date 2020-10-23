@@ -1,0 +1,33 @@
+Connecting Node & Angular
+
+Two Ways of Connecting Node + Angular
+	1. Node (Express) App Serves Angular SPA 
+		Node (Express) handles incoming requests
+		Requests targeting "/" path return Angular SPA
+	2. Two Separated Servers
+		Node (Express) handles incoming requests
+		Angular SPA served from separate static host
+		
+	In both cases: Logically Separated Apps
+
+What is a RestFul API (with NodeJS)? 
+	Representational State Transfer - Server Side solution
+	It is a stateless backends
+		URL - Paths
+	e.g.
+						RESTful Server (API)
+		/users			/posts			/products
+	HTTP Verbs	
+		
+	-----
+	Client (Browser) - Angular 
+		Requests
+	
+	Server - NodeJS
+		Response
+
+	Client (Mobile App)
+
+	Client (Code)
+	
+	Client (Browser w/ SPA)

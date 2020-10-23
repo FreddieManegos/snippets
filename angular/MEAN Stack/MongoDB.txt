@@ -1,0 +1,28 @@
+MongoDB?
+	mongoDB - A NoSQL database which stores "Documents" in "Collections" (instead of "Records" in "Tables" as in SQL)
+	A Database that runs on Server
+	* Store Application Data 
+		(Users, Products,..)
+	* Enforces no Data Schema or Relations
+	* Easily connected to Node/Express
+	* A powerful Database which can easily be integrated into a Node/Express Environment
+	
+
+Comparing SQL vs NoSQL
+
+	NoSQL
+		MongoDB, CouchDB
+		Enforces no Data Schema
+		Less Focused on Relations
+		Independent Documents
+		Great for: Logs, Orders, (Chat) Messages
+	
+	SQL
+		MySQL, PostgreSQL
+		Enforces a Strict Data Schema
+		Relations are a Core Feature
+		Records are Related
+		Great for: Shopping Carts, Contacts, Networks
+		
+Connecting Angular to the Database?
+	Is not good because Highly Insecure, Secure Authentication is not really possible, Full Database would be exposed
