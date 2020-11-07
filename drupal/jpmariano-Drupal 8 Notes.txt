@@ -1,0 +1,778 @@
+Theme Folder Installation Location
+/Theme
+
+Theme Installation Instruction
+INSTALL.txt or README.txt
+
+URL for Theme Manangement
+/admin/appearance
+
+sites/default - 0777
+$ chmod -R 777 .
+
+
+During Development 
+//Uncomment inside sites/default/settings.php if this causes an error try url/rebuild.php
+if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+}
+
+
+
+inside settings.php 
+  $settings['trusted_host_patterns'] = array(
+
+    '^localhost$',
+    
+    '^localhost\.*',
+    '^website-test.dd$'
+    );
+
+
+If you see error:
+  - https://www.drupal.org/docs/8/configuration-management/changing-the-storage-location-of-the-sync-directory
+  - place this in: $config_directories[CONFIG_SYNC_DIRECTORY] = 'sites/default/sync';  - in settings.php and add the sync folder 
+
+
+set settings.php back to 644
+$ chmod 644 settings.php
+
+//Settings.local.php - copied from sites/example.settings.local.php into sites/default/settings.local.php
+/**
+ * Disable CSS and JS aggregation.
+ */
+$config['system.performance']['css']['preprocess'] = FALSE;
+$config['system.performance']['js']['preprocess'] = FALSE;
+
+$settings['cache']['bins']['render'] = 'cache.backend.null';
+$settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.null';
+
+$settings['extension_discovery_scan_tests'] = TRUE;
+
+
+Install 
+https://www.youtube.com/watch?v=J9bjOD3s02o - Install Drupal Console
+https://www.drupal.org/project/webprofiler drupal module:install webprofiler 
+https://www.drupal.org/project/devel
+
+$ composer Install
+
+Drupal root
++-- core
+|   +-- themes
+|       +-- bartik
+|       +-- classy
+|       +-- engines
+|       +-- seven
+|       +-- stable
+|       +-- stark
++-- sites
+|   +-- *
+|       +-- themes
+|           +-- maya
++-- themes
+    +-- contrib
+        +-- zen        
+    +-- custom
+        +-- my_custom_theme
+
+
+/core/themes/bartik
+ +-- bartik.breakpoints.yml
+ +-- bartik.info.yml
+ +-- bartik.libraries.yml
+ +-- bartik.theme
+ +-- config
+ |   +-- schema
+ |   +-- bartik.schema.yml
+ +-- css
+ |   +-- base
+ |   |   +-- elements.css
+ |   +-- colors.css
+ |   +-- components
+ |   |   +-- block.css
+ |   |   +-- book.css
+ ...
+ |   |   +-- views.css
+ |   +-- layout.css
+ |   +-- maintenance-page.css
+ |   +-- print.css
+ +-- images
+ |   +-- tabs-border.png
+ +-- logo.svg
+ +-- screenshot.png
+ +-- templates
+ +-- block--search-form-block.html.twig
+ ...
+ +-- status-messages.html.twig
+
+ All template files goes to templates directory see classy theme
+ .theme - contains your php logic 
+ .yml - contains configuration
+ js folder - for all js
+ css folder - for all classes
+ images - for all theme images
+---------------------------------------------------
+Describe Your Theme with an Info File
+
+themes/icecream/icecream.info.yml
+# THEMENAME.info.yml file for Ice Cream example theme.
+name: Ice Cream
+type: theme
+base theme: classy
+description: 'A great theme for warm summer days.'
+package: Custom
+core: 8.x
+
+    name (required): This is the name of our theme.
+    type (required): This is the type of extension (theme, module, or profile).
+    base theme (required): This is the theme that the current theme is inheriting. In most cases, it is recommended we reference either classy or stable as our base theme. If we choose not to reference a based theme, then we will need to set the value to false (base theme: false).
+    description (required): This is the description of our theme.
+    package (optional): This is used to group similar files when creating modules.
+    version (optional): This is created by packaging script.
+    core (required): This specifies the version of Drupal that a theme is compatible with.
+---------------------------------------------------
+theme-settings-overview
+- admin/people/permissions
+  - create a role - themer  and assigned permissions
+    - Administer themes
+    - Use the administration pages and help
+    - View the administration theme
+- admin/appearance/settings
+  - See core/includes/theme.inc: function get_theme_setting() and search for string, "logo.svg" to peek under the hood and see how this works.
+---------------------------------------------------
+Adding Regions (See Bartik)
+
+Step 1: 
+regions:
+  machinenameofregion: 'Human Readable Region Name'
+  machinenameofregion: 'Human Readable Region Name'
+Step 2:
+  //to use inside twig file pag.html.twig
+   {{ page.machinenameofregion }}
+Step 3: 
+  Add block to region: admin/structure/block
+
+If no regions, Default Regions will display. 
+If you define the region, you will define all region. in theme.info.yml 
+
+---------------------------------------------------
+Configure Your Environment for Theme Development
+
+- Create Environment variables
+  - Create settings.local.php 
+  sites/default/settings.php
+  //1. uncomment and paste it all the way to the bottom 
+  if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+     include $app_root . '/' . $site_path . '/settings.local.php';
+  }
+- Disable render caching and Enable Twig Debugging mode
+  //2. Copy sites/default/example.settings.local.php and paste it in sites/default/settings.local.php 
+  - just by including settings.local.php the js and css cache is disabled 
+  - just by including settings.local.php  it's now reading the development.services.yml which has development settings and you can include additional/override development settings (copy from default.services.yml and paste it here)
+    - $settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
+    - Enable Twig Debugging 
+      parameters:
+        twig.config:
+          debug: true
+          auto_reload: true 
+          cache: false 
+
+    This gives:
+    FILE NAME SUGGESTIONS
+    OUTPUT - where the code template is generated from
+  - uncomment 
+   $settings['cache']['bins']['render'] = 'cache.backend.null';
+   $settings['cache']['bins']['page'] = 'cache.backend.null'; 
+
+- Preview Changes after enabling debugging 
+  - $ drush cr 
+  - view source 
+
+---------------------------------------------------
+    //adding CSS and JS libraries (See Bartik)
+    libraries:
+  - themename(folderlocation)/rootkey-name -- see <themefoldername>.libraries.html(foldername.libraries.yml) for example
+  - themename(folderlocation)/rootkey-name
+
+    libraries-override:
+    folderlocation/rootkey-name: themename(folderlocation)/rootkey-name 
+
+    Extending libraries
+    libraries-extend:
+    folderlocation/rootkey-name: 
+        - themename(folderlocation)/rootkey-name
+    
+    stylesheets-remove:
+    - foldernamelocation/filename
+
+
+    //using Twig to add the css and js
+    {{ attach_library('themename(folderlocation)/rootkey-name') }}
+
+    //Attaching CSS Specifically *.theme
+    function themename_preprocess_page(&$variables) {
+        if ($variables['is_front']) {
+            $variables['#attached']['library'][] = 'themename(folderlocation)/rootkey-name';
+        }
+    }
+---------------------------------------------------
+<themefoldername>.theme 
+- has mostly preprocess hook 
+---------------------------------------------------
+<themefoldername>.breakpoints.yml 
+  bartik.mobile:
+    label: mobile
+    mediaQuery: ''
+    weight: 0
+    multipliers:
+      - 1x
+  bartik.narrow:
+    label: narrow
+    mediaQuery: 'all and (min-width: 560px) and (max-width: 850px)'
+    weight: 1
+    multipliers:
+      - 1x
+  bartik.wide:
+    label: wide
+    mediaQuery: 'all and (min-width: 851px)'
+    weight: 2
+    multipliers:
+      - 1x
+
+ 
+go to /admin/modules
+Enable 	Responsive Image
+admin/config/media/responsive-image-style should match <themefoldername>.breakpoints.yml 
+---------------------------------------------------
+Add a screenshot to your theme
+width: 588 px 
+length: 438 px 
+.png 
+- optional use https://imageoptim.com/mac to optimize image 
+save image as screenshot.png inside your themefoldername 
+
+if you name file differently, edit THEME.info.yml
+screenshot: screenshot_icecream.png or 
+screenshot: images/screenshot_icecream.png 
+
+
+---------------------------------------------------
+*.twig 
+Twig Template hierarchy https://www.drupal.org/docs/8/theming/twig/twig-template-naming-conventions
+    HTML wrapper: This contains the top-level HTML markup, including title, metadata, style sheets, and scripts, and it is commonly referred to as html.html.twig.
+    Page wrapper: This contains the content generally found between the body tags of an HTML document, and it is commonly referred to as page.html.twig.
+    Header: This is also known as a region, generally containing the header content of our web page. This can be part of the page.html.twig template or may reside in a region specified within our configuration file. This is commonly referred to as region.html.twig.
+    Content: This is also considered a region, generally containing our main content. This can consist of multiple subcontent regions, such as nodes and comments. Nodes and comments each have their own respective templates referred to as node.html.twig and comment.html.twig.
+    Sidebar: This is also considered a region. This can contain blocks of content. Blocks are either created by the end user or by Drupal itself. The content within these blocks generally resides within block.html.twig.
+    Footer: This is another region containing HTML content as well as blocks of content.
+
+Core Templates Location
+core/modules/system/templates: This contains the core templates 
+core/modules/node/templates: This contains the templates for nodes
+core/modules/comment/templates: This contains the comment templates
+core/modules/block/templates: This contains the templates for blocks
+
+Override a template File 
+- view source - to see where the template is generated from 
+- copy the actuacl <name>.html.twig and paste it inside templates directory of your theme  
+  - optionally, you can be more specific in theming by renaming the file to available template suggestion (which can be viewed in view source)
+- {hook}--{optional context}.html.twig
+  For example:
+  node.html.twig: hook name is node
+  node--blog_post.html.twig: hook name is node
+  field--node--title--page.html.twig: hook name is field
+- To view more template files 
+  - use the {{ dump }} in *.html.twig
+    - or {{ dump(_context|keys) }} 
+    - or {{ dump(variable_key_name) }}
+  - use the kint() of the devel module 
+    - Usage Example inside node.html.twig 
+      - {{ kint()}}
+      - or {{ kint(_context|keys) }} 
+      - or {{ kint(variable_key_name) }}
+- var_dump 
+---------------------------------------------------
+
+themename.theme
+    Intercept and Override variables
+    {# overriding  html.html.twig #} 
+    function themename_preprocess_html(&$variables) {
+        $variables['attributes']['class'][] = 'twig';
+    }
+    function themename_preprocess_block(&$variables){
+        dpm($variables);
+    }
+        //sample code after finding variables
+        function themename_preprocess_block(&$variables){
+            // Add layout class to Featured Blocks
+            $featured = array('block-tweet-customblockone','block-tweet-customblocktwo','block-tweet-customblockthree');
+            
+            $id = $variables['attributes']['id'];
+
+            // If block id matches list - add class
+            if(in_array($id, $featured)){
+                $variables['attributes']['class'][] = 'col-md-4';
+            }
+        }
+    function themename_preprocess_node(&$variables) {
+        $node = $variables ['elements']['#node'];
+        $id = $node->id();
+
+        // Create comment count variable for template
+        $count = _octo_comment_count($id);
+        //{{ comment_count }} to print in twig
+        $variables['comment_count'] = _octo_plural($count, 'Comment',
+        'Comments');
+    }
+        function _octo_comment_count($id) {
+            $count = db_query("SELECT comment_count FROM
+            comment_entity_statistics WHERE entity_id = :id",
+            array(':id' => $id))->fetchField();
+            
+            return empty($count) ? '0' : $count;
+        }
+        function _octo_plural($count, $singular, $plural) {
+            if ( $count == 1 )
+                return $count . ' ' . $singular;
+            else
+                return $count . ' ' . $plural;
+        }
+    - Adding template variable to *.html.twig 
+      - For example: in themename.theme 
+        - function themename_preprocess_node(&$variables){
+            $variables['your_custom_variable'] = array(
+              '$markup' => 'A simple string', 
+            );
+          }
+        -In your node.html.twig 
+          {{ your_custom_variable }}
+    - Complete list of default preprocess function 
+      template_preprocess(&$variables, $hook): Creates a default set of variables for all theme hooks with template implementations. Provided by Drupal Core.
+      template_preprocess_HOOK(&$variables): Should be implemented by the module that registers the theme hook, to set up default variables.
+      MODULE_preprocess(&$variables, $hook): hook_preprocess() is invoked on all implementing modules.
+      MODULE_preprocess_HOOK(&$variables): hook_preprocess_HOOK() is invoked on all implementing modules, so that modules that didn't define the theme hook can alter the variables.
+      ENGINE_engine_preprocess(&$variables, $hook): Allows the theme engine to set necessary variables for all theme hooks with template implementations.
+      ENGINE_engine_preprocess_HOOK(&$variables): Allows the theme engine to set necessary variables for the particular theme hook.
+      THEME_preprocess(&$variables, $hook): Allows the theme to set necessary variables for all theme hooks with template implementations.
+      THEME_preprocess_HOOK(&$variables): Allows the theme to set necessary variables specific to the particular theme hook.
+      - if you view source, THEME_HOOK: 'node' 
+        - inside themename.theme 
+          - function themename_preprocess_node(&$variables){
+            //override variable as needed 
+          }
+
+---------------------------------------------------
+  How to add theme hook suggestions
+
+$element = array(
+  '#theme' => array(
+    'node__custom_suggestion', // node--custom-suggestion.html.twig
+    'node__teaser' // node--teaser.html.twig
+    'node' // node.html.twig
+  ),
+);
+
+hook_theme_suggestions_HOOK: Modules that provide new templates
+https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_theme_suggestions_HOOK/8.2.x
+hook_theme_suggestions_HOOK_alter: To remove, reorder or add the list of theme hook suggestions for a given template
+https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_theme_suggestions_HOOK_alter/8.2.x
+  /**
+  * Implements hook_theme_suggestions_HOOK_alter().
+  */
+  function MYTHEME_theme_suggestions_node_alter(array &$suggestions, array $variables) {
+    $logged_in = \Drupal::currentUser()->isAuthenticated();
+    if ($logged_in) {
+      $suggestions[] = 'node__' . 'authenticated';
+    }
+  }
+hook_theme_suggestions_alter: Alter theme hook suggestions
+https://api.drupal.org/api/drupal/core%21lib%21Drupal%21Core%21Render%21theme.api.php/function/hook_theme_suggestions_alter/8.2.x
+---------------------------------------------------
+Twig Fundamentals
+{# ... #} - comment tag - replaces <!-- This is a comment -->
+{{ ... }} - print tag
+{% ... %} -  statement tag
+
+Place inside page.html.twig
+    {# Setting a variable #}
+    {% set name = 'Drupal' %}
+
+    {# Gettting variables #}
+    <pre>{{ dump(name, is_front) }}</pre>
+
+    {# Filter a variable #}
+    {{ name_of_variable|name_of_filter }} 
+    For Example: 
+    <pre>{{ name|upper}} Rocks</pre> 
+    <title>{{ head_title|safe_join(' | ') }}</title>
+
+
+    {# Filter a variable and elements#}
+    {% filter upper %}
+        <p>{{ name }} is the best cms around.</p>
+    {% endfilter %}
+    
+    //Control structures
+
+      {# Conditional logic #}
+      {% set offline = true %}
+      {% if offline == true %}
+          <p>Website is in maintenance mode.</p>
+      {% endif %}
+      
+      {# Declaring Array #}
+      {%
+        set classes = [
+          'block',
+          'block-' ~ configuration.provider|clean_class,
+          'block-' ~ plugin_id|clean_class,
+        ]
+      %}
+
+      {# Looping #}
+      {% if types is not empty %}
+        <dl class="node-type-list">
+          {% for type in types %}
+            <dt>{{ type.add_link }}</dt>
+            <dd>{{ type.description }}</dd>
+          {% endfor %}
+        </dl>
+      {% else %}
+        <p>
+          {% set create_content = path('node.type_add') %}
+          {% trans %}
+            You have not created any content types yet. Go to the <a href="{{ create_content }}">content type creation page</a> to add a new content type.
+          {% endtrans %}
+        </p>
+      {% endif %}
+
+      //Using if conditions in loops
+      <ul class='blog-post__tags field__items'>
+        {% for item in items if item.status %}
+          <li>{{ value.content }}</li>
+        {% endfor %}
+      </ul>
+     
+      //else condition
+        <ul class='blog-post__tags field__items'>
+          {% for item in items %}
+            <li>{{ item.content }}</li>
+          {% else %}
+            <li>This list is empty</li>
+          {% endfor %}
+        </ul>
+
+      {% for i in 0 ..10 %}
+      {{ i }}
+      {% endfor %}
+
+      //list of loop variables
+      loop.index	The current iteration of the loop. (1 indexed)
+      loop.index0	The current iteration of the loop. (0 indexed)
+      loop.revindex	The number of iterations from the end of the loop (1 indexed)
+      loop.revindex0	The number of iterations from the end of the loop (0 indexed)
+      loop.first	True if first iteration
+      loop.last	True if last iteration
+      loop.length	The number of items in the sequence
+      loop.parent	The parent context
+
+
+
+      //Print Values from a Field with a For Loop
+      For example: themes/icecream/templates/field--node--field-tags--blog-post.html.twig
+        <ul class='blog-post__tags field__items'>
+          {% for item in items %}
+            <li{{ item.attributes.addClass('blog-post__tag') }}>{{ item.content }}</li>
+          {% endfor %}
+        </ul>
+      //Add first/last classes
+      <ul class='blog-post__tags field__items'>
+        {% for item in items %}
+          {% if loop.first %}
+            <li{{ item.attributes.addClass(['blog-post__tag', 'first']) }}>{{ item.content }}</li>
+          {% elseif loop.last %}
+            <li{{ item.attributes.addClass(['blog-post__tag', 'last']) }}>{{ item.content }}</li>
+          {% else %}
+            <li{{ item.attributes.addClass('blog-post__tag') }}>{{ item.content }}</li>
+          {% endif %}
+
+        {% endfor %}
+      </ul>
+      //output 
+      <ul class='blog-post__tags field__items'>
+        <li class="blog-post__tag first">drupal</li>
+        <li class="blog-post__tag">weekly updates</li>
+        <li class="blog-post__tag">unicorns</li>
+        <li class="blog-post__tag last">chad</li>
+      </ul>
+
+    //Print out a variable appended with a function
+    <div{{ attributes.addClass('banner') }}>
+    
+    //More information: https://drupalize.me/videos/twig-tricks-and-html-escaping?p=1899
+    Comments and docblocks
+    {#
+      /**
+      * @file
+      * Theme override for page titles.
+      *
+      * Available variables:
+      * - title_attributes: HTML attributes for the page title element.
+      * - title_prefix: Additional output populated by modules, intended to be
+      *   displayed in front of the main title tag that appears in the template.
+      * - title: The page title, for use in the actual content.
+      * - title_suffix: Additional output populated by modules, intended to be
+      *   displayed after the main title tag that appears in the template.
+      */
+    #}
+
+
+Each Twig templage has list of variables written at the top of the file
+It can be displayed as such: {{ variablename }} 
+---------------------------------------------------
+Access Variable attributes
+//using . syntax
+{{ page.sidebar_right }}
+
+---------------------------------------------------
+Creating region templates -- copy from /core/modules/system/templates *.twig a nd place this in your theme and edit
+region--regionname.html.twig
+
+//Theme Folder Structure
+css: This contains custom style sheets.
+img: This contains images used by the style sheets.
+js: This contains custom JavaScript.
+templates: This contains Twig templates.
+vendor: This contains JavaScript libraries.
+
+<!DOCTYPE html>
+<html{{ html_attributes }}>
+  <head>
+    <head-placeholder token="{{ placeholder_token|raw }}">
+    <title>{{ head_title|safe_join(' | ') }}</title>
+    <css-placeholder token="{{ placeholder_token|raw }}"> //outputs from *.libraries.yml
+    <js-placeholder token="{{ placeholder_token|raw }}">
+  </head>
+  <body{{ attributes }}>
+    <a href="#main-content" class="visually-hidden focusable">
+      {{ 'Skip to main content'|t }}
+    </a>
+    {{ page_top }}
+    {{ page }} //outputs from page.html.twig
+    {{ page_bottom }}
+    <js-bottom-placeholder token="{{ placeholder_token|raw }}">
+  </body>
+</html>
+
+Creating Block templates
+Check the block that outputs - block--system-branding-block-html-twig
+Navigate to core/modules/system/templates and copy the block--system-branding-block.html.twig template to our themes/themename/templates folder.
+
+Implementing our search form block
+Check the block that outputs - block--search-form-block.html.twig
+Navigate to core/modules/block/templates and copy the block.html.twig template to our themes/themename/templates folder.
+
+
+Creating an input element template
+Navigate to core/modules/system/templates and copy the input.html.twig template to our themes/themename/templates/input--search.html.twig.
+modify input--search.html.twig:
+{% set classes = ['form-control',] %}  {# set an array variable of classes #}
+<input{{attributes.addClass(classes).setAttribute         {# addClass - adds a class #}
+   ('placeholder','Enter your search terms...') }} />
+   {{ children }}
+
+
+Creating a menu template
+Navigate to core/modules/system/template and copy menu.html.twig to the themes/themename/templates/menu--main.html.twig
+modify menu--main.html.twig:
+<ul{{ attributes.addClass('nav nav-pills nav-main') }}>
+
+Creating System Menu block template
+Navigate to core/modules/system/template and copy block--system-menu-block.html.twig to the themes/octo/templates/block--system-menu-block.html.twig
+modify block--system-menu-block.html.twig:
+ <div class="navbar-main navbar-collapse collapse">
+     {{ content }}
+   </div>
+modify page--front.html.twig:
+<div class="header-nav container">
+    {{ page.header}}
+    {{ page.primary_menu }}
+</div>
+
+Implementing our Node template
+Navigate to core/modules/system/template and copy node.html.twig to the themes/octo/templates/block--node--post--listing.html.twig
+
+Working with content variables
+node--post--listing.html.twig
+{% set classes = ['post', 'post--listing'] %}
+<article{{ attributes.addClass(classes) }}>
+   {{ content.field_image }} {# field_image is a field machine name #} 
+   {{ content }}
+</article>
+
+Using Twig filters for dates
+node--post-listing.html.twig
+<div class="post-date">
+  <span class="day">{{ node.createdtime|date('d') }}</span>
+  <span class="month">{{ node.createdtime|date('M') }}</span>
+</div>
+
+Printing title and teaser
+node--post-listing.html.twig
+<div class="post-content">
+  {{ title_prefix }}
+  <h2{{ title_attributes }}>
+    <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+  </h2>
+  {{ title_suffix }}
+  {{ content.field_teaser }}
+</div>
+{{ content|without('field_image','field_teaser') }}
+
+Creating our post metadata
+<div class="post-meta">
+  <span class="post-meta-user">
+    <i class="fa fa-user"></i> By {{ author_name }}
+  </span>
+</div>
+
+node--post--listing.html.twig
+<span class="post-meta-tag">
+  <i class="fa fa-tag"></i> {{ content.field_tags }}
+</span>
+
+Field templates and taxonomy
+field--field-tags.html.twig
+<ul>
+  {% for item in items %}
+    <li{{ item.attributes.addClass('field-item') }}>
+         {{ item.content }}
+    </li>
+  {% endfor %}
+</ul>
+
+Adding a read more link
+node--post--listing.html.twig
+<a href="{{ url }}" class="button button--primary button--xs pull-right">Read more...</a>
+
+
+Handling comments in Drupal 8
+comments are now their own field and must be added to a content type like any other field that you want to create
+/admin/structure/comment - logic
+/admin/structure/types/manage/post/fields - template
+
+
+
+
+Creating a sticky header
+//-- Sticky Header
+   (function() {
+     var mainnav = $('.header');
+     if (mainnav.length) {
+       var elmHeight = $('.header-top').outerHeight(true);
+       $(window).scroll(function() {
+         var scrolltop = $(window).scrollTop();
+         if (scrolltop > elmHeight) {
+
+           if (!mainnav.hasClass('sticky')) {
+             mainnav.addClass('sticky');
+           }
+
+         } else {
+           mainnav.removeClass('sticky');
+         }
+        })
+       }
+     })();
+
+
+
+Adding custom JavaScript
+themename.libraries.yml - where the js libraries and custom js are referenced
+//sample jquery code
+! function($) {
+    $(document).ready(function() {
+
+    });
+}(jQuery);
+
+https://docs.drupalconsole.com/en/commands/available-commands.html
+
+Activate Debugging
+Uncomment in settings.local.php and settings.php (Makes error display in browser)
+settings.local.php
+$config['system.logging']['error_level'] = 'verbose';
+
+settings.php
+ if (file_exists(__DIR__ . '/settings.local.php')) {
+  include __DIR__ . '/settings.local.php';
+ }
+
+ Install Devel module
+  Install Web Profiler
+    - click configure
+
+$('.skip-line', context).on('change', function(){
+            // some code
+            if ( confirm(Drupal.t('Apply to all languages?')) ) {
+              // applying...
+            }
+});
+
+Updating Drupal 8
+1. Make a backup
+2. Change settings.php 
+  - $settings['update_free_access'] = TRUE; //Tells drupal that you can update the site without logging in  
+  - Disable varnish or memcache 
+3. Turn maintenance mode on  - /admin/config/development/maintenance
+4. Download the latest drupal core 
+5. In the old site, remove everything except, modules, sites, themes, .htaccess, .ht.router.php,  .git
+3. Update the code
+4. drush cr all
+5. /update.php
+5. Turn maintenance mode off
+6. drush cr all
+
+https://www.drupal.org/forum/support/post-installation/2016-09-22/file-and-directory-permissions-lets-finally-get-this
+To start:
+(site-wide all directories) 755 | sudo find sites -type d -exec chmod 775 {} \;
+(site-wide all files) 644 |sudo find sites -type f -exec chmod 664 {} \;
+Then:
+chmod 444 sites/default/settings.php;
+
+/.htaccess- 444 - (chosing something more restrictive and Drupal seems to work OK) (needs read public or site will get 403) Why are user write permissions needed at all?
+/sites/default (directory) - 555 - why are execute permissions needed?
+/sites/default/settings.php - 400 - (chosing something more restrictive and Drupal seems to work OK) Why are group and public read permissions needed?
+/sites/default/files (directories) - 775 | sudo find /var/www/html/sites/default/files -type d -exec chmod 775 {} \;
+/sites/default/files (files) - 664 | sudo find /var/www/html/sites/default -type f -exec chmod 664 {} \;
+
+sudo chmod /sites/default/files 755 -R
+
+
+Drupal 7 File And Folder Structure 
+http://www.elated.com/articles/understanding-permissions/
+Main Folder - 644 Recursive 
+Sites - 755 Recursive
+settings.php - 444 
+Notes: When moving the site to dev desktop set the file and folder settings first and delete settings.php 
+Additional note: Keep an eye for prefix
+
+sudo find /var/www/html/opss-retheme -type d -exec chmod 770 {} \;
+
+sudo find /var/www/html -type f -exec chmod 444 {} \;
+sudo find /var/www/html -type d -exec chmod 555 {} \;
+
+sudo find /var/www/html/sites/default -type f -exec chmod 664 {} \;
+sudo find /var/www/html/sites/default/files -type f -exec chmod 664 {} \;
+sudo find /var/www/html/sites/default/files -type d -exec chmod 775 {} \;
+sudo find /Users/mariano/Sites/devdesktop/drupal-usu/libraries -type d -exec chmod 775 {} \;
+drush webform-libraries-download
+
+
+sudo find /jet/app/drupal -type d -exec chmod 770 {} \;
+
+sudo find /var/www/html/opss-retheme/sites -type d -exec chmod 755 {} \;
+sudo find /var/www/html/opss-retheme/sites/default/settings.php -type d -exec chmod 444 {} \;
+sudo find /jet/app/drupal/sites/default/settings.php -type d -exec chmod 444 {} \;
+sudo find /jet/app/drupal/opss_retheme -type d -exec chmod 770 {} \;
