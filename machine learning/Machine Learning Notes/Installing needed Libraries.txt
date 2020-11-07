@@ -1,0 +1,35 @@
+What to install 
+numpy
+pandas
+matplotlib
+mglearn
+scikit-learn
+
+
+npm install numpy
+npm install pandas
+npm install matplotlib
+npm install mglearn
+npm install scikit-learn
+
+-------
+
+Numpy Basic 
+
+
+
+
+Pandas Basic
+
+
+
+
+Matplotlib Basic
+
+
+
+MgLearn Basic
+
+
+
+Scikit-learn Basic
