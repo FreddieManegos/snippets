@@ -1,0 +1,42 @@
+3. Module Implementation
+    https://github.com/nodejs/node
+
+    jS code -> NodeJS JS Side -> process.binding()[Connects JS and C++ functions] -> V8 [Converts values between JS & C++ World] 
+    -> Node's C++ Side -> libuv [Gives node easy access to underlying OS]
+
+4. Node Backend by C++
+
+
+5. The Basics of Threads
+    Event Loop -> handle asynchrounous Loop
+
+    Process -> instance of a program -> a single process has a multiple threads
+    Thread -> a little to do list  
+    A core can process multiple threads -> multi-threading
+
+6. The Node Event Loop
+    Node program   -> One Thread inside is the event loop
+    Difficult to understand the event loop
+
+
+9. Is Node Single Threaded?
+    Node Event Loop -> Single Threaded
+    Some of Node Framework/Std Lib -> Not Single Threaded
+
+    Many core 
+
+11. The Libuv Thread Pool
+
+12. Threadpools with Multi-threading
+
+12. Changing Threadpools
+    Question    
+
+15. Explaining OS Operations
+
+16. Libuv OS Delegation
+
+20. Unexpected Event Loop Events
+
+    ThreadPool -> FS Module
+    OS -> HTTPS

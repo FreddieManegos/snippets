@@ -1,0 +1,30 @@
+Enhancing Performance of Node
+
+1. Enhancing Performance
+    Improving Node Performance
+        Use Node in 'Cluster' Mode -> Recommended
+        Use Worker Threads -> Experimental
+
+2. Blocking the Event Loop
+    Clustering
+                Single Thread
+    Request ->  Node Server     -> Response
+
+ 3. Clustering in Theory
+
+
+                    ->  Single Thread - Node Server
+ 
+    CLuster Manager ->  Single Thread - Node Server   
+                        
+                    ->  Single Thread - Node Server
+
+    RUN node index.js
+
+        [ index.js ]  -> Node Instance 
+
+    With Clustering 
+            |---------------------------------------------------
+        [ index.js ]  -> [ Cluster Manager ] -> cluster.fork() -| 
+
+4. BenchMarking
