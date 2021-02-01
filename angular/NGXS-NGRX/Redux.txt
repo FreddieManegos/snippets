@@ -1,0 +1,11 @@
+A Redux is a library helps you manage the state of your application.
+
+Medium to Large Applications:
+	Redux -> adds complexity 
+
+
+Benefits
+	Predictable application state
+	Decoupled Architecture
+	Testability
+	
