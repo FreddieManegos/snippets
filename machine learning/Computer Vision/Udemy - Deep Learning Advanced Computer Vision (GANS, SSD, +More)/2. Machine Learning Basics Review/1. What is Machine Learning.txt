@@ -1,0 +1,12 @@
+machine learning - an application of AI that provides systems the ability to automatically learn and improve from experience. 
+                 - is nothing but a geometry problem
+                 Example: Regression 
+                    Fit a line or curve
+                    machine learning is just glorified curve-fitting 
+                    y = mx + b 
+        Classification
+             Both classification and regression are example of supervised learning 
+             Regression: predict a number 
+             Classification: predict a category/label
+             Image classification 
+                
