@@ -1,0 +1,16 @@
+NGXS
+	- A State Management for Angular which is based from Redux of React
+	NGXS is also a state management pattern + library for Angular. As NGXS is modeled after the CQRS pattern popularly implemented in libraries Redux and NGRX but reduces boilerplate by using modern TypesScript features such as classes and decorators.
+
+There are 4 major concepts in NGXS:
+	1. Store. The store is a global state manager that dispatches actions your state containers listen to and provides a way to select data slices out from the global state.
+	
+	2. Actions: Actions describe unique events that are dispatched from components and services. Each action contains a type field which is their unique identifier and payload required for that action.
+	
+	3. State: Class definition of the state. State changes are handled by pure functions also called reducers that take the current state and the latest action to compute a new state.
+	
+	4. Selects: Selectors are pure functions used to select, derive and compose pieces of state
+
+	
+	Why do we need State Management?
+	 The current trend is to use a Redux-based storage solution, which consists of a Store, Selectors to get data from the store in the form of Observables and Actions to modify the store. This allows for a single source of truth, a read-only state and the flow of data going in one direction.

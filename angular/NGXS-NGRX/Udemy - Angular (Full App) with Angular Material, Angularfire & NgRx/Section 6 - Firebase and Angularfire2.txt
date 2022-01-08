@@ -1,0 +1,38 @@
+What is Firebase 
+	Easy to use backend
+	1 Realtime Databases
+		Store and sync data
+		Via Rest and SDK
+		No server-side code required
+	2 Authentication
+		User Signup/Login
+		Via Rest and SDK
+		No server-side code required	
+		With SDK; Frontend managed for you
+	3 Storage
+		File Upload & Download
+		Via SDK
+		No Server-side code required
+	4 Analytics
+		Various ANalytics
+		User Behavior, Crash Statistics
+		Convenient-to-use Dashboards
+	5 Cloud Functions
+		On-Demand Server-side Code
+		Connect to various Events
+		Only runs when needed
+
+What is Angularfire?
+	This acts as the bridge between Firebase and Angular App
+	A third party 
+	
+Observables, Observers, and Subscriptions
+	Observable -> 
+		connected with subscription
+	Observer -> next(), error(), complete()
+	
+	
+	
+How Authentication Works
+		
+	Angular App sends credentials to the server and this server will then authenticate users.

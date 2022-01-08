@@ -1,0 +1,6 @@
+What is Typescript:
+    1. A Superset of Javascript
+    2. Adds new Features + Advantages to Javascript
+    3. Browser Can't Execute it
+    4. A language building up on Javascript
+    5. 
