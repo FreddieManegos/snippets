@@ -1,0 +1,62 @@
+1. Initializing and Cloning Repositories:
+git init: Initializes a new Git repository in the current directory.
+Code
+
+    git init
+git clone <url>: Copies an existing remote repository to your local machine.
+Code
+
+    git clone https://github.com/user/repo.git
+2. Staging and Committing Changes:
+git status: Shows the status of your working directory, including staged, unstaged, and untracked files.
+Code
+
+    git status
+git add <file>: Stages specific file changes for the next commit.
+Code
+
+    git add index.html
+git add .: Stages all changes in the current directory for the next commit.
+Code
+
+    git add .
+git commit -m "Your commit message": Saves the staged changes to the repository's history with a descriptive message.
+Code
+
+    git commit -m "Add initial project structure"
+3. Branching and Merging:
+git branch: Lists all local branches.
+Code
+
+    git branch
+git branch <branch-name>: Creates a new branch.
+Code
+
+    git branch new-feature
+git checkout <branch-name>: Switches to a different branch.
+Code
+
+    git checkout new-feature
+git merge <branch-name>: Merges the specified branch's changes into the current branch.
+Code
+
+    git merge new-feature
+4. Remote Operations:
+git pull: Fetches and merges changes from the remote repository into your local branch.
+Code
+
+    git pull origin main
+git push: Uploads your local commits to the remote repository.
+Code
+
+    git push origin main
+5. Viewing History:
+git log: Displays a chronological list of commits in the current branch.
+Code
+
+    git log
+git diff: Shows the differences between your working directory and the last commit, or between two commits.
+Code
+
+    git diff
+Important Note: Replace <url>, <file>, <branch-name>, and "Your commit message" with your specific details.
